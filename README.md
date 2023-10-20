@@ -32,3 +32,8 @@ Przy ocenie będziemy zwracać uwagę na:
 - Responsywność oraz ogólną funkcjonalność aplikacji.
 
 **Powodzenia!** 
+
+# Instrukcja uruchomienia:
+1. cd todo-app
+2. npm install
+3. npm start

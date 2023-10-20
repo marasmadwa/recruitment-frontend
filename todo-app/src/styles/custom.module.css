@@ -1,0 +1,166 @@
+@charset "UTF-8";
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/** ROOT **/
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/**LAYOUT**/
+.todo_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem 1rem 3rem;
+  background: url("../assets/img/background.jpg");
+  background-repeat: no-repeat;
+}
+.todo_wrapper .todo_fieldset legend {
+  background: #6366f1;
+  color: white;
+}
+.todo_wrapper .todo_fieldset h2,
+.todo_wrapper .todo_fieldset h3 {
+  color: #9261d7;
+}
+.todo_wrapper .todo_fieldset ul {
+  list-style: none;
+  position: relative;
+}
+.todo_wrapper .todo_fieldset ul li {
+  margin: 0.5rem;
+  text-align: left;
+}
+.todo_wrapper .todo_fieldset ul li::before {
+  content: "•";
+  color: #6366f1;
+  margin: 0 0 0 -1em;
+  display: inline-block;
+  position: absolute;
+}
+.todo_wrapper .todo_fieldset .input_wrapper {
+  width: 100%;
+}
+.todo_wrapper .todo_fieldset .input_wrapper input {
+  width: 83%;
+  margin-right: 2%;
+}
+.todo_wrapper .todo_fieldset .input_wrapper button {
+  width: 15%;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul {
+  padding: 0;
+  list-style: none;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0 1rem 0;
+  animation: fadein 0.4s linear 1 normal forwards;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li i {
+  margin-right: 1rem;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col {
+  width: 50%;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col .button_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col .button_wrapper .task_toggle_button {
+  text-decoration: none !important;
+  margin-right: 1rem;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col .button_wrapper .task_toggle_button_done {
+  margin-right: 1rem;
+  background-color: #22c55e !important;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col .button_wrapper .task_delete_button {
+  background: #EF4444 !important;
+  border: none;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .col .button_wrapper .task_delete_button:hover {
+  background: white !important;
+  color: #EF4444;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li .task_done {
+  text-decoration: line-through;
+}
+.todo_wrapper .todo_fieldset .task_list_wrapper ul li::before {
+  content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .todo_wrapper {
+    padding: 1rem;
+  }
+  .todo_wrapper .todo_fieldset ul {
+    padding: 0;
+  }
+  .todo_wrapper .todo_fieldset .input_wrapper {
+    width: 100%;
+  }
+  .todo_wrapper .todo_fieldset .input_wrapper input {
+    width: 100%;
+    margin: 0;
+  }
+  .todo_wrapper .todo_fieldset .input_wrapper button {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: small;
+  }
+  .todo_wrapper .todo_fieldset .input_wrapper button span {
+    font-size: small;
+  }
+  .todo_wrapper .todo_fieldset .task_list_wrapper ul li {
+    display: flex;
+    flex-direction: column;
+  }
+  .todo_wrapper .todo_fieldset .task_list_wrapper ul li .col {
+    width: 100%;
+  }
+  .todo_wrapper .todo_fieldset .task_list_wrapper ul li .button_wrapper {
+    margin-top: 1rem;
+  }
+  .todo_wrapper .todo_fieldset .task_list_wrapper ul li .button_wrapper button {
+    font-size: x-small;
+  }
+  .todo_wrapper .todo_fieldset .task_list_wrapper ul li .button_wrapper button span {
+    font-size: x-small;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .input_wrapper {
+    width: 100%;
+  }
+  .input_wrapper input {
+    width: 100%;
+    margin: 0;
+  }
+  .input_wrapper button {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: x-small;
+  }
+  .input_wrapper button span {
+    font-size: x-small;
+  }
+  .button_wrapper button {
+    font-size: x-small;
+  }
+  .button_wrapper button span {
+    font-size: x-small;
+  }
+}/*# sourceMappingURL=custom.module.css.map */

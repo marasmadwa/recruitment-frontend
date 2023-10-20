@@ -1,0 +1,173 @@
+@import "./variables.scss";
+@import "./animation.scss";
+
+/** ROOT **/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/**LAYOUT**/
+
+.todo_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem 1rem 3rem;
+  background: url("../assets/img/background.jpg");
+  background-repeat: no-repeat;
+  .todo_fieldset {
+    legend {
+      background: $appColor;
+      color: $defaultWhite;
+    }
+    h2,
+    h3 {
+      color: $headings;
+    }
+    ul {
+      list-style: none;
+      position: relative;
+      li {
+        margin: 0.5rem;
+        text-align: left;
+      }
+    }
+    ul li::before {
+      content: "\2022";
+      color: $appColor;
+      margin: 0 0 0 -1em;
+      display: inline-block;
+      position: absolute;
+    }
+    .input_wrapper {
+      width: 100%;
+      input {
+        width: 83%;
+        margin-right: 2%;
+      }
+      button {
+        width: 15%;
+      }
+    }
+    .task_list_wrapper {
+      ul {
+        padding: 0;
+        list-style: none;
+        li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin: 1rem 0 1rem 0;
+          animation: fadein 0.4s linear 1 normal forwards;
+          i {
+            margin-right: 1rem;
+          }
+          .col {
+            width: 50%;
+            .button_wrapper {
+              display: flex;
+              justify-content: flex-end;
+              .task_toggle_button {
+                text-decoration: none !important;
+                margin-right: 1rem;
+              }
+              .task_toggle_button_done {
+                margin-right: 1rem;
+                background-color: $successColor !important;
+              }
+              .task_delete_button {
+                background: $errorColor !important;
+                border: none;
+              }
+              .task_delete_button:hover {
+                background: $defaultWhite !important;
+                color: $errorColor;
+              }
+            }
+          }
+          .task_done {
+            text-decoration: line-through;
+          }
+        }
+      }
+      ul li::before {
+        content: "";
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo_wrapper {
+    padding: 1rem;
+    .todo_fieldset {
+      ul {
+        padding: 0;
+      }
+      .input_wrapper {
+        width: 100%;
+        input {
+          width: 100%;
+          margin: 0;
+        }
+        button {
+          margin-top: 1rem;
+          width: 100%;
+          font-size: small;
+          span {
+            font-size: small;
+          }
+        }
+      }
+      .task_list_wrapper {
+        ul li {
+          display: flex;
+          flex-direction: column;
+          .col {
+            width: 100%;
+          }
+          .button_wrapper {
+            margin-top: 1rem;
+            button {
+              font-size: x-small;
+              span {
+                font-size: x-small;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .input_wrapper {
+    width: 100%;
+    input {
+      width: 100%;
+      margin: 0;
+    }
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      font-size: x-small;
+      span {
+        font-size: x-small;
+      }
+    }
+  }
+  .button_wrapper {
+    button {
+      font-size: x-small;
+      span {
+        font-size: x-small;
+      }
+    }
+  }
+}
